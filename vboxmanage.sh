@@ -19,4 +19,4 @@ VBoxManage guestproperty set "$VM_NAME" "/VirtualBox/GuestInfo/Net/1/V4/IP" "$VM
 # Start VM
 VBoxManage startvm "$VM_NAME" --type headless
 
-ssh osboxes@$VM_IP "bash -s" < install.sh
+sshpass -p 'osboxes.org' ssh osboxes@$VM_IP "bash -s" < install.sh
