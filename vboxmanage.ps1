@@ -2,6 +2,9 @@
 $VM_NAME = "Debian-Cyber-NPE"
 $VM_IP = "192.168.53.100"
 
+# Delete exisiting VM
+VBoxManage.exe unregistervm $VM_NAME --delete
+
 # Create VM
 VBoxManage.exe createvm --name $VM_NAME --ostype "Debian_64" --register
 VBoxManage.exe storagectl $VM_NAME --name "SATA Controller" --add sata --controller IntelAhci
@@ -18,6 +21,6 @@ VBoxManage.exe guestproperty set $VM_NAME "/VirtualBox/GuestInfo/Net/1/V4/IP" $V
 VBoxManage.exe startvm $VM_NAME --type headless
 
 # SSH into VM and run install.sh
-$SecurePassword = ConvertTo-SecureString 'osboxes.org' -AsPlainText -Force
-$Credential = New-Object System.Management.Automation.PSCredential ('osboxes', $SecurePassword)
-ssh $Credential osboxes@$VM_IP "bash -s" < .\install.sh
+# $SecurePassword = ConvertTo-SecureString 'osboxes.org' -AsPlainText -Force
+# $Credential = New-Object System.Management.Automation.PSCredential ('osboxes', $SecurePassword)
+# ssh $Credential osboxes@$VM_IP "bash -s" < .\install.sh

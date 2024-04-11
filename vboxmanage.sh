@@ -4,6 +4,9 @@
 VM_NAME="Debian-Cyber-NPE"
 VM_IP=192.168.53.100
 
+# Delete existing VM
+VBoxManage unregistervm $VM_NAME --delete
+
 # Create VM
 VBoxManage createvm --name "$VM_NAME" --ostype "Debian_64" --register
 VBoxManage storagectl "$VM_NAME" --name "SATA Controller" --add sata --controller IntelAhci
