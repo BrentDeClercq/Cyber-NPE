@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
 # Vars
 VM_NAME="Debian-Cyber-NPE"
@@ -21,13 +21,13 @@ VBoxManage modifyvm "$VM_NAME" --memory 1024 --vram 128
 VBoxManage modifyvm "$VM_NAME" --nic1 nat
 VBoxManage modifyvm "$VM_NAME" --nic2 hostonly --hostonlyadapter2 vboxnet1
 VBoxManage modifyvm "$VM_NAME" --boot1 dvd --boot2 disk --boot3 none --boot4 none
+VBoxManage sharedfolder add "Debian-Cyber-NPE" --name "Share" --automount --auto-mount-point="/mnt/share/" --hostpath="/home/brent/Documents/School/2023-2024/Semester 2/Cybersecurity & Virtualisation/NPE/Cyber-NPE"
+
 
 # Start VM
-VBoxManage startvm "$VM_NAME" --type headless
+VBoxManage startvm "$VM_NAME"
 
 # Copy script to VM
 
-VBoxManage guestcontrol "$VM_NAME" copyto --target-directory=/home/osboxes/ --username=$USERNAME --password=$PASSWORD install.sh
+# VBoxManage guestcontrol "$VM_NAME" copyto --target-directory=/home/osboxes/ --username=$USERNAME --password=$PASSWORD install.sh
 
-
-# sshpass -p 'osboxes.org' ssh osboxes@$VM_IP "bash -s" < install.sh    
