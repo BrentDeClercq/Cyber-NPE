@@ -11,5 +11,10 @@
 
 ## Commando's
 
-sudo mkdir /mnt/shared
-sudo mount -t vboxsf Share /mnt/shared
+- `sudo mkdir /mnt/shared`
+- `sudo mount -t vboxsf Share /mnt/shared`
+- `cd /mnt/shared`
+- `./install.sh`
+
+## Stappenplan
+
