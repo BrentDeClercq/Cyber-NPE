@@ -11,7 +11,7 @@ services:
       - "80:80/tcp"
     environment:
       TZ: "Europe/Brussels"
-      WEBPASSWORD: "kenji"
+      WEBPASSWORD: "brent"
     # Volumes store your data between container upgrades
     volumes:
       - "/home/osboxes/etc-pihole:/etc/pihole"
