@@ -2,8 +2,6 @@
 
 # Vars
 VM_NAME="Debian-Cyber-NPE"
-USERNAME="osboxes"
-PASSWORD="osboxes.org"
 
 # Delete existing VM
 VBoxManage controlvm $VM_NAME poweroff
@@ -26,8 +24,3 @@ VBoxManage sharedfolder add "Debian-Cyber-NPE" --name "Share" --automount --auto
 
 # Start VM
 VBoxManage startvm "$VM_NAME"
-
-# Copy script to VM
-
-# VBoxManage guestcontrol "$VM_NAME" copyto --target-directory=/home/osboxes/ --username=$USERNAME --password=$PASSWORD install.sh
-
